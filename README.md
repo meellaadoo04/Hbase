@@ -10,7 +10,7 @@ UTILIZACIÓN
 
 Creamos los archivos docker-compose.yml y hbase-site.xml 
 
-Ejecutamos el Docker --> docker-compose up -d 
+Ejecutamos el Docker --> `docker-compose up -d` 
 
 Accedemos a la consola de Hbase --> docker exec -it hbase bash 
 
