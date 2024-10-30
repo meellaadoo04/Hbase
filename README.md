@@ -10,29 +10,37 @@ UTILIZACIÓN
 
 Creamos los archivos docker-compose.yml y hbase-site.xml 
 
-Ejecutamos el Docker --> `docker-compose up -d` 
+Ejecutamos el Docker --> 
+```bash
+docker-compose up -d`
+```
 
 Accedemos a la consola de Hbase -->
 ```bash
 docker exec -it hbase bash
 ```
 
-Dentro del contendeor iniciamos la shell --> bin/hbase shell 
+Dentro del contendeor iniciamos la shell --> 
+```bash
+bin/hbase shell
+```
 
 Para la creación de la tabla deberemos utilizar el siguiente formato: 
 
  
 
-create "nombre de la tabla", "nombre_filas"  --> create 'jugadores_futbol', 'nombre', 'nacionalidad', 'goles', 'asistencias' 
-
+create "nombre de la tabla", "nombre_filas"  --> 
+```bash
+create 'jugadores_futbol', 'nombre', 'nacionalidad', 'goles', 'asistencias' 
+```
  
 
 Para la insercción de datos utilizamos el siguiente comando: 
+Put 'nombre_tabla', 'jugador', 'fila',  'valor'
 
-Put 'nombre_tabla', 'jugador', 'fila',  'valor' 
 
  
-
+```bash
 # Datos para el jugador 1 
 
 put 'jugadores_futbol', 'player1', 'nombre:', 'Lionel Messi' 
@@ -67,44 +75,44 @@ put 'jugadores_futbol', 'player3', 'goles:', '250'
 
 put 'jugadores_futbol', 'player3', 'asistencias:', '100' 
 
- 
+ ```
 
 Consultar la tabla  
 
  
-
+```bash
 scan 'jugadores_futbol' 
-
+```
  
 
 Consultar un jugador especifico 
 
  
-
+```bash
 get 'jugadores_futbol', 'player1' 
-
+```
  
 
 Consultar solo los nombres 
 
  
-
+```bash
 scan 'jugadores_futbol', {COLUMNS => ['nombre:']} 
-
+```
  
 
 Contar el numero de filas de cada tabla 
 
  
-
+```bash
 count 'jugadores_futbol' 
-
+```
  
 
 Muestrame solo las 2 primeras filas 
 
  
-
+```bash
 scan 'jugadores_futbol', {LIMIT => 2} 
-
+```
  
