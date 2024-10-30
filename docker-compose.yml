@@ -1,0 +1,17 @@
+version: '3.8'
+
+services:
+  hbase:
+    image: harisekhon/hbase:latest  # Cambiamos a una imagen específica para HBase.
+    container_name: hbase
+    ports:
+      - "16010:16010"  # Puerto para la interfaz web de HBase Master.
+      - "2181:2181"    # Puerto para Zookeeper.
+    environment:
+      HBASE_ROOTDIR: "file:///data/hbase"
+      HBASE_ZNODE_PARENT: "/hbase-unsecure"
+    volumes:
+      - hbase-data:/data/hbase
+
+volumes:
+  hbase-data:
