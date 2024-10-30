@@ -12,7 +12,10 @@ Creamos los archivos docker-compose.yml y hbase-site.xml
 
 Ejecutamos el Docker --> `docker-compose up -d` 
 
-Accedemos a la consola de Hbase --> docker exec -it hbase bash 
+Accedemos a la consola de Hbase -->
+```bash
+docker exec -it hbase bash
+```
 
 Dentro del contendeor iniciamos la shell --> bin/hbase shell 
 
